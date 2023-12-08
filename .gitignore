@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### TOKEN Discord and start JDA###
+src/main/java/com/example/tibiaeventbusproject/discordWebHookLayer/WebHookThread.java
