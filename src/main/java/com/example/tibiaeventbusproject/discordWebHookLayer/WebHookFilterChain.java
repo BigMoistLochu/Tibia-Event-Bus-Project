@@ -15,11 +15,12 @@ public class WebHookFilterChain implements FilterChain{
 
     public void doFilter()
     {
+
         String contexMessage = event.getMessage().getContentRaw();
 
-        if(FilterChainMap.getFilterChains().containsKey(contexMessage))
+        if(FilterChainMap.getMapOfChains().containsKey(contexMessage))
         {
-            FilterChainMap.getFilterChains().get(contexMessage).runSelectedEvent();
+            FilterChainMap.getMapOfChains().get(contexMessage).runSelectedEvent();
         }
 
     }

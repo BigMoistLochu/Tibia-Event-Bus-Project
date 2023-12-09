@@ -17,7 +17,7 @@ public class FilterChainMap {
         this.tibiaEventService = tibiaEventService;
     }
 
-    public static HashMap<String,Filtr> getFilterChains()
+    public static HashMap<String,Filtr> getMapOfChains()
     {
         map.put("kill",()->{
             tibiaEventService.getTibiaEvent("wykonuje kill dodanie Eventu do bazy danych");
