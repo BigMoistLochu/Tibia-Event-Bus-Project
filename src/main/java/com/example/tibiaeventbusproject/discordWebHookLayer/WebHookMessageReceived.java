@@ -1,5 +1,6 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer;
 
+import com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess.FilterChain;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
