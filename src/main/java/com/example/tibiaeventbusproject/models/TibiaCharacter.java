@@ -2,7 +2,7 @@ package com.example.tibiaeventbusproject.models;
 
 public class TibiaCharacter {
 
-    private String nick;
-
-
+    //email
+    //haslo
+    //... co tam chcesz
 }
