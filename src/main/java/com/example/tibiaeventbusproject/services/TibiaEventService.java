@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 public class TibiaEventService {
 
 
+    //tutaj bedziesz chcial uzyc repozytorum wiec bedzie musialo to byc beanem
+
     public void getTibiaEvent(String s)
     {
         System.out.println(s);

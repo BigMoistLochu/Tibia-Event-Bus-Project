@@ -7,6 +7,8 @@ public class TibiaEvent {
 
     //czas kiedy sie wykonalo
 
+    //hashWygenerowany do autoryzacji
+
 
 
 }

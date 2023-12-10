@@ -10,7 +10,6 @@ import java.util.Map;
 @Component
 public class FilterChainMap {
 
-    //Map<String, String> map = Map.of("key1","value1", "key2", "value2");
 
     private static TibiaEventService tibiaEventService;
 
@@ -28,28 +27,28 @@ public class FilterChainMap {
      * @return
      */
     private static Map<String,Filtr> createMap(){
-        Map<String,Filtr> newInstancemap = new HashMap<>();
+        Map<String,Filtr> newInstanceMap = new HashMap<>();
 
-        newInstancemap.put("kill",()->{
-            System.out.println("dodaje do bazy kill event do tibia service");
-            tibiaEventService.getTibiaEvent("essa kill!");
+        newInstanceMap.put("kill",()->{
+            System.out.println("Zwracam metode z lambdy i dodaje do kolejki event");
+            FilterChainQueue.getInstance().addEventToQueue("KILL!");
         });
 
-        newInstancemap.put("dead",()->{
+        newInstanceMap.put("dead",()->{
             System.out.println("dodaje do bazy dead event do tibia service");
             tibiaEventService.getTibiaEvent("essa dead!");
         });
 
-        newInstancemap.put("balance",()->{
+        newInstanceMap.put("balance",()->{
             System.out.println("dodaje do bazy balance event do tibia service");
             tibiaEventService.getTibiaEvent("essa balance!");
         });
 
-       return newInstancemap;
+       return newInstanceMap;
     }
 
 
-    public static Map<String,Filtr> getMapOfChains()
+    protected static Map<String,Filtr> getMapOfChains()
     {
         return map;
     }
