@@ -9,6 +9,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 @SpringBootApplication
 public class TibiaEventBusProjectApplication implements CommandLineRunner {
 
@@ -33,6 +36,9 @@ public class TibiaEventBusProjectApplication implements CommandLineRunner {
         //Thread responsible for processing messages and uploading them to the database
         FilterChainQueueEater filterChainQueueEater = new FilterChainQueueEater(tibiaEventService);
         filterChainQueueEater.run();
+        //dalej sie nic nie uruchomi bo ten watek ciagle sie wykonuje...
+
+
 
     }
 }

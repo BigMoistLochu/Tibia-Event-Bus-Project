@@ -25,10 +25,12 @@ public class FilterChainMap {
 
         newInstanceMap.put("dead",()->{
             System.out.println("dodaje do bazy dead event do tibia service");
+            FilterChainQueue.getInstance().addEventToFirstQueue("DEAD!");
         });
 
         newInstanceMap.put("balance",()->{
             System.out.println("dodaje do bazy balance event do tibia service");
+            FilterChainQueue.getInstance().addEventToFirstQueue("BALANCE!");
         });
 
        return newInstanceMap;

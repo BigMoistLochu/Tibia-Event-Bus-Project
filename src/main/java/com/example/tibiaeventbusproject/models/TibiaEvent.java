@@ -3,11 +3,11 @@ package com.example.tibiaeventbusproject.models;
 public class TibiaEvent {
 
     private String nick;
-    private TibiaEvent state;//tutaj bedzie enum czyli czy to jesy Smierc/Frag...
+    private TibiaEvent state;
 
-    //czas kiedy sie wykonalo
+    private String time;
 
-    //hashWygenerowany do autoryzacji
+    private String hashAuth;
 
 
 
