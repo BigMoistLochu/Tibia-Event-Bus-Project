@@ -10,7 +10,7 @@ public class TibiaEventService {
 
     public void getTibiaEvent(String s)
     {
-        System.out.println(s);
+        System.out.println("Dopiero teraz obsluzylem element: "+s);
     }
 
 }

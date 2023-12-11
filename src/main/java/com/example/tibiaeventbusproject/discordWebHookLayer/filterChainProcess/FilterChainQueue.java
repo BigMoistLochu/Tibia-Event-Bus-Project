@@ -19,64 +19,56 @@ public final class FilterChainQueue {
         return INSTANCE;
     }
 
-    private static Queue<String> queue1 = new LinkedList<>();
-    private static Queue<String> queue2 = new LinkedList<>();
+    private final static Queue<String> queue1 = new LinkedList<>();
+    private final static Queue<String> queueMain = new LinkedList<>();
 
 
 
-    private static boolean QUEUE_FLAG1 = true; //na starcie zmienna beda ustawione na true
-    private static boolean QUEUE_FLAG2 = true;
 
-
-
-    protected void addEventToQueue(String message)
+    protected void addEventToFirstQueue(String message)
     {
-        if(QUEUE_FLAG1==true)
-        {
-            if(queue1.offer(message))
-            {
-                System.out.println("ELEMENT ZOSTAL DODANY DO KOLEJKI: "+ message);
-            }
-        }
-        else if(QUEUE_FLAG2 == true) {
-
-            if(queue2.offer(message))
-            {
-                System.out.println("Element zostal dodany: "+ message);
-            }
-        }
+        queue1.offer(message);
     }
-
-
-
-
-
 
     /**
      * Wszystko ponizej jest tylko dla watku FilterChainQueueEater
      * ------------------------------------------------------------------------------------
      */
-    protected static boolean isQueueFlag1() {
-        return QUEUE_FLAG1;
+    protected synchronized static String addEventToMainQueue()
+    {
+
+        if(!queue1.isEmpty())
+        {
+            String element = queue1.poll();
+            if(element!=null)
+            {
+                queueMain.offer(element);
+            }
+
+            String elementMain = queueMain.poll();
+
+            if(elementMain!=null)
+            {
+                return elementMain;
+            }
+        }
+
+        return null;
     }
 
-    protected static void setQueueFlag1(boolean queueFlag1) {
-        QUEUE_FLAG1 = queueFlag1;
-    }
 
-    protected static boolean isQueueFlag2() {
-        return QUEUE_FLAG2;
-    }
-
-    protected static void setQueueFlag2(boolean queueFlag2) {
-        QUEUE_FLAG2 = queueFlag2;
-    }
-
-    protected static Queue<String> getQueue1() {
+    protected static Queue<String> getQueue1()
+    {
         return queue1;
     }
 
-    protected static Queue<String> getQueue2() {
-        return queue2;
-    }
+
+
+
+
+
+
+
+
+
 }
