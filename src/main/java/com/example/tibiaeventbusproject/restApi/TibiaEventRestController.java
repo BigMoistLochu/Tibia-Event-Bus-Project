@@ -4,12 +4,14 @@ import com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess.F
 import com.example.tibiaeventbusproject.models.TibiaEvent;
 import com.example.tibiaeventbusproject.services.TibiaEventService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class TibiaEventRestController {
 
        private TibiaEventService tibiaEventService;
