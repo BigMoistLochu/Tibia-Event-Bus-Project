@@ -18,17 +18,17 @@ public class FilterChainMap {
     private static Map<String, FiltrMethod> createMap(){
         Map<String, FiltrMethod> newInstanceMap = new HashMap<>();
 
-        newInstanceMap.put("kill",()->{
+        newInstanceMap.put("Frag",()->{
             System.out.println("Zwracam metode z lambdy i dodaje do kolejki event");
-            FilterChainQueue.getInstance().addEventToFirstQueue("KILL!");
+            FilterChainQueue.getInstance().addEventToFirstQueue("Frag!");
         });
 
-        newInstanceMap.put("dead",()->{
+        newInstanceMap.put("Dead",()->{
             System.out.println("dodaje do bazy dead event do tibia service");
             FilterChainQueue.getInstance().addEventToFirstQueue("DEAD!");
         });
 
-        newInstanceMap.put("balance",()->{
+        newInstanceMap.put("Balance",()->{
             System.out.println("dodaje do bazy balance event do tibia service");
             FilterChainQueue.getInstance().addEventToFirstQueue("BALANCE!");
         });

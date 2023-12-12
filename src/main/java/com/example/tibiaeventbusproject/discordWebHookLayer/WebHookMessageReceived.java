@@ -2,6 +2,7 @@ package com.example.tibiaeventbusproject.discordWebHookLayer;
 
 import com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess.FilterChain;
 import com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess.WebHookFilterChain;
+import com.example.tibiaeventbusproject.models.TibiaEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -16,13 +17,18 @@ public class WebHookMessageReceived extends ListenerAdapter {
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
 
-        //tutaj bedzie sprawdzanie czy odpowiedni event jest zrobiony
-        //sprawdzamy czy nie jest nullem tez!
-        //wyciagamy otcbot.message()
         if(event!=null)
         {
-            filterChain.setEvent(event).doFilter();
+            String message = event.getMessage().getContentRaw();
+            TibiaEvent parsedEvent = TibiaEventJsonHandler.getParsedTibiaEvent(message);
+            if(parsedEvent!=null)
+            {
+                filterChain.setEvent(parsedEvent).doFilter();
+            }
+
         }
+
+
 
     }
 }

@@ -1,5 +1,6 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess;
 
+import com.example.tibiaeventbusproject.models.TibiaEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public interface FilterChain {
@@ -9,7 +10,7 @@ public interface FilterChain {
      * @param event
      * @return
      */
-    WebHookFilterChain setEvent(MessageReceivedEvent event);
+    WebHookFilterChain setEvent(TibiaEvent event);
 
     /**
      * Method that filters all messages and selects the correct one

@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class TibiaEventService {
 
-    private TibiaEventRepository tibiaEventRepository;
-
-    @Autowired
-    public TibiaEventService(TibiaEventRepository tibiaEventRepository) {
-        this.tibiaEventRepository = tibiaEventRepository;
-    }
+//    private TibiaEventRepository tibiaEventRepository;
+//
+//    @Autowired
+//    public TibiaEventService(TibiaEventRepository tibiaEventRepository) {
+//        this.tibiaEventRepository = tibiaEventRepository;
+//    }
 
     public void getTibiaEvent(String s)
     {
