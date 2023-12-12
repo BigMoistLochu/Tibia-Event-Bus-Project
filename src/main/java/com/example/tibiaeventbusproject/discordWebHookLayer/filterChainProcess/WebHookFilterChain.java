@@ -22,7 +22,7 @@ public class WebHookFilterChain implements FilterChain {
 
         if(FilterChainMap.getMapOfChains().containsKey(state))
         {
-            FilterChainMap.getMapOfChains().get(state).runSelectedEvent();
+            FilterChainMap.getMapOfChains().get(state).runSelectedEvent(event);
         }
 
     }

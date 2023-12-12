@@ -1,5 +1,7 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess;
 
+import com.example.tibiaeventbusproject.models.TibiaEvent;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -19,33 +21,33 @@ public final class FilterChainQueue {
         return INSTANCE;
     }
 
-    private final static Queue<String> queue1 = new LinkedList<>();
-    private final static Queue<String> queueMain = new LinkedList<>();
+    private final static Queue<TibiaEvent> queue1 = new LinkedList<>();
+    private final static Queue<TibiaEvent> queueMain = new LinkedList<>();
 
 
 
 
-    protected void addEventToFirstQueue(String message)
+    protected void addEventToFirstQueue(TibiaEvent tibiaEvent)
     {
-        queue1.offer(message);
+        queue1.offer(tibiaEvent);
     }
 
     /**
      * Wszystko ponizej jest tylko dla watku FilterChainQueueEater
      * ------------------------------------------------------------------------------------
      */
-    protected synchronized static String addEventToMainQueue()
+    protected synchronized static TibiaEvent addEventToMainQueue()
     {
 
         if(!queue1.isEmpty())
         {
-            String element = queue1.poll();
+            TibiaEvent element = queue1.poll();
             if(element!=null)
             {
                 queueMain.offer(element);
             }
 
-            String elementMain = queueMain.poll();
+            TibiaEvent elementMain = queueMain.poll();
 
             if(elementMain!=null)
             {
@@ -57,7 +59,7 @@ public final class FilterChainQueue {
     }
 
 
-    protected static Queue<String> getQueue1()
+    protected static Queue<TibiaEvent> getQueue1()
     {
         return queue1;
     }

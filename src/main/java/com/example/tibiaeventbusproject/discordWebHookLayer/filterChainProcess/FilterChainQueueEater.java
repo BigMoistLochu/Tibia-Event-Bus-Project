@@ -1,5 +1,6 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess;
 
+import com.example.tibiaeventbusproject.models.TibiaEvent;
 import com.example.tibiaeventbusproject.services.TibiaEventService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,10 +25,10 @@ public class FilterChainQueueEater implements Runnable{
             if(!FilterChainQueue.getQueue1().isEmpty())
             {
 
-                String messageEvent = FilterChainQueue.addEventToMainQueue();
-                if(messageEvent!=null)
+                TibiaEvent tibiaEvent = FilterChainQueue.addEventToMainQueue();
+                if(tibiaEvent!=null)
                 {
-                    tibiaEventService.getTibiaEvent(messageEvent);
+                    tibiaEventService.getTibiaEvent(tibiaEvent);
                 }
             }
         }
