@@ -1,8 +1,9 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess;
 
-import com.example.tibiaeventbusproject.models.TibiaEvent;
+import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEvent;
+import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventDto;
+import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventMapper;
 import com.example.tibiaeventbusproject.services.TibiaEventService;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class FilterChainQueueEater implements Runnable{
 
@@ -25,9 +26,13 @@ public class FilterChainQueueEater implements Runnable{
             if(!FilterChainQueue.getQueue1().isEmpty())
             {
 
-                TibiaEvent tibiaEvent = FilterChainQueue.addEventToMainQueue();
-                if(tibiaEvent!=null)
+                TibiaEventDto tibiaEventDto = FilterChainQueue.addEventToMainQueue();
+                if(tibiaEventDto !=null)
                 {
+
+                    //tutaj bedzie sprawdzac czy taki uzytkownik istnieje ;)
+
+                    TibiaEvent tibiaEvent = TibiaEventMapper.convertDtoToEntity(tibiaEventDto);
                     tibiaEventService.getTibiaEvent(tibiaEvent);
                 }
             }

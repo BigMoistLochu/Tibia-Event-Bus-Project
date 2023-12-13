@@ -1,14 +1,12 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess;
-import com.example.tibiaeventbusproject.models.TibiaEvent;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-
+import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventDto;
 
 
 public class WebHookFilterChain implements FilterChain {
 
-    private TibiaEvent event;
+    private TibiaEventDto event;
 
-    public WebHookFilterChain setEvent(TibiaEvent event)
+    public WebHookFilterChain setEvent(TibiaEventDto event)
     {
         this.event = event;
         return this;

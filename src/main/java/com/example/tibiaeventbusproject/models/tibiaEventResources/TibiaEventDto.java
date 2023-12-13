@@ -1,9 +1,9 @@
-package com.example.tibiaeventbusproject.models;
+package com.example.tibiaeventbusproject.models.tibiaEventResources;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class TibiaEvent {
+public class TibiaEventDto {
 
     @JsonProperty("nick")
     private String nick;
@@ -17,7 +17,7 @@ public class TibiaEvent {
     @JsonProperty("hash")
     private String hashAuth;
 
-    public TibiaEvent(){}
+    public TibiaEventDto(){}
 
 
     public String getState() {

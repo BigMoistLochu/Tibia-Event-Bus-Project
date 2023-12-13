@@ -2,15 +2,14 @@ package com.example.tibiaeventbusproject;
 
 import com.example.tibiaeventbusproject.discordWebHookLayer.WebHookThread;
 import com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess.FilterChainQueueEater;
+import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEvent;
 import com.example.tibiaeventbusproject.services.TibiaEventService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
 
 @SpringBootApplication
 public class TibiaEventBusProjectApplication implements CommandLineRunner {
@@ -37,8 +36,7 @@ public class TibiaEventBusProjectApplication implements CommandLineRunner {
         FilterChainQueueEater filterChainQueueEater = new FilterChainQueueEater(tibiaEventService);
         filterChainQueueEater.run();
         //dalej sie nic nie uruchomi bo ten watek ciagle sie wykonuje...
-
-
-
+        //admin
+        //pass
     }
 }

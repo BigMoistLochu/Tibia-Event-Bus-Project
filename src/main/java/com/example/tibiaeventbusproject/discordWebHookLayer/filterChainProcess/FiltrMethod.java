@@ -1,8 +1,8 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess;
 
-import com.example.tibiaeventbusproject.models.TibiaEvent;
+import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventDto;
 
 @FunctionalInterface
 public interface FiltrMethod {
-    void runSelectedEvent(TibiaEvent tibiaEvent);
+    void runSelectedEvent(TibiaEventDto tibiaEventDto);
 }

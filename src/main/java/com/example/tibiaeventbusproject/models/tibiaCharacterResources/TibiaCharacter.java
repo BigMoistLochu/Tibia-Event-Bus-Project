@@ -1,8 +1,12 @@
-package com.example.tibiaeventbusproject.models;
+package com.example.tibiaeventbusproject.models.tibiaCharacterResources;
 
 public class TibiaCharacter {
 
     private String email;
+
+    //email to jako login
+    //haslo
+    //HashWygenerowany przy rejestracji(czyli jesli wszystko git
 
     public TibiaCharacter(String email) {
         this.email = email;

@@ -1,6 +1,6 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer;
 
-import com.example.tibiaeventbusproject.models.TibiaEvent;
+import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -18,17 +18,17 @@ public class TibiaEventJsonHandler {
      * @return
      */
 
-    protected static TibiaEvent getParsedTibiaEvent(String message)
+    protected static TibiaEventDto getParsedTibiaEvent(String message)
     {
         if(doesMessageContainBotOTCMessage(message))
         {
             String json = extractJsonFromMessage(message);
             if(json!=null)
             {
-                TibiaEvent tibiaEvent = getEventFromJson(json);
-                if(tibiaEvent!=null)
+                TibiaEventDto tibiaEventDto = getEventFromJson(json);
+                if(tibiaEventDto !=null)
                 {
-                    return tibiaEvent;
+                    return tibiaEventDto;
                 }
             }
         }
@@ -59,9 +59,9 @@ public class TibiaEventJsonHandler {
         return null;
     }
 
-    private static TibiaEvent getEventFromJson(String json) {
+    private static TibiaEventDto getEventFromJson(String json) {
         try {
-            return mapper.readValue(json, TibiaEvent.class);
+            return mapper.readValue(json, TibiaEventDto.class);
         } catch (JsonProcessingException e) {
             System.out.println("Bledny String przy deserializacji jsona na obiekt w klasie MessageReceivedFilter");
         }

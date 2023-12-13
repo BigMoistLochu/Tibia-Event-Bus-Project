@@ -1,8 +1,10 @@
 package com.example.tibiaeventbusproject.repositories;
 
-import org.springframework.stereotype.Component;
+import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEvent;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TibiaEventRepository {
+public interface TibiaEventRepository extends MongoRepository<TibiaEvent,String> {
+
 }
