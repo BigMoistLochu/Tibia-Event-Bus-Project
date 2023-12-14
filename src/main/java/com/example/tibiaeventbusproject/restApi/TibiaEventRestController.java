@@ -3,6 +3,8 @@ package com.example.tibiaeventbusproject.restApi;
 import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEvent;
 import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventDto;
 import com.example.tibiaeventbusproject.services.TibiaEventService;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,8 +25,10 @@ public class TibiaEventRestController {
 
 
        @GetMapping("/events")
-       public List<TibiaEvent> getAllEvets()
+       public List<TibiaEvent> getAllEvets(HttpServletResponse response)
        {
+              Cookie cookie = new Cookie("Ciacho1","ka83d");
+              response.addCookie(cookie);
               return tibiaEventService.getTibiaEventList();
        }
 
