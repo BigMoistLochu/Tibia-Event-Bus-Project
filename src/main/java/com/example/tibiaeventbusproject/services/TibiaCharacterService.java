@@ -1,8 +1,11 @@
 package com.example.tibiaeventbusproject.services;
 
+import com.example.tibiaeventbusproject.models.tibiaCharacterResources.TibiaCharacter;
 import com.example.tibiaeventbusproject.repositories.TibiaCharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class TibiaCharacterService {
@@ -13,5 +16,10 @@ public class TibiaCharacterService {
     @Autowired
     public TibiaCharacterService(TibiaCharacterRepository repository) {
         this.repository = repository;
+    }
+
+    public List<TibiaCharacter> getAllTibiaCharacters()
+    {
+        return repository.findAll();
     }
 }
