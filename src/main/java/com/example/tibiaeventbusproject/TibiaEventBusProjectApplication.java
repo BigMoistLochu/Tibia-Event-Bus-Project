@@ -37,25 +37,6 @@ public class TibiaEventBusProjectApplication implements CommandLineRunner {
         FilterChainQueueEater filterChainQueueEater = new FilterChainQueueEater(tibiaEventService);
         filterChainQueueEater.run();
 
-//        System.out.println(tibiaEventService.getTibiaEventList());
-        //dalej sie nic nie uruchomi bo ten watek ciagle sie wykonuje...
-        //admin
-        //pass
-        //{
-        //  "_id": ObjectId("eventId1"),
-        //  "eventName": "Spotkanie",
-        //  "date": "2023-12-31"
-        //}
-
-        //{
-        //  "_id": ObjectId("userId123"),
-        //  "username": "jan_kowalski",
-        //  "events": [
-        //    ObjectId("eventId1")
-        //  ]
-        //}
-
-        //Czyli to bedzie tak ze bedzie sie tworzyl nowy event jako id,state,date
 
     }
 }

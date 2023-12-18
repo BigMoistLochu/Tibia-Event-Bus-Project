@@ -13,7 +13,6 @@ public class WebHookFilterChain implements FilterChain {
     }
 
 
-
     public void doFilter()
     {
         String state = event.getState();
