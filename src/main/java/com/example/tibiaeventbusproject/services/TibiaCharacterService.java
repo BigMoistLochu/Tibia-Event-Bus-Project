@@ -22,4 +22,10 @@ public class TibiaCharacterService {
     {
         return repository.findAll();
     }
+
+    public TibiaCharacter getTibiaCharacterByHash(String email)
+    {
+        return repository.getTibiaCharacterByEmail(email);
+    }
+
 }

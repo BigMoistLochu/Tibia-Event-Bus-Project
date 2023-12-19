@@ -9,7 +9,7 @@ public class HashGenerator {
 
     //chcesz uzywac tej funkcji tylko do hashowania wiec nie potrzebujesz kilku instancji
 
-    public String getBcryptHashString(String email)
+    public static String getBcryptHashString(String email)
     {
         //$2a$12$US00g/uMhoSBm.HiuieBjeMtoN69SN.GE25fCpldebzkryUyopws6 przykladowy hash
         if(email instanceof String && email!=null)
@@ -20,7 +20,7 @@ public class HashGenerator {
         return null;
     }
 
-    public boolean verifyBcryptHashString(String email,String bcryptHashString)
+    public static boolean verifyBcryptHashString(String email,String bcryptHashString)
     {
         BCrypt.Result result = BCrypt.verifyer().verify(email.toCharArray(), bcryptHashString);
         return result.verified;
