@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface TibiaCharacterRepository extends MongoRepository<TibiaCharacter,String> {
 
     TibiaCharacter getTibiaCharacterByEmail(String email);
+
+    boolean existsByHashAuth(String hash);
 }

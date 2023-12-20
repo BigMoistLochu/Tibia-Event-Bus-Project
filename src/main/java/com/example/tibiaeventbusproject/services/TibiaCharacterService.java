@@ -28,4 +28,9 @@ public class TibiaCharacterService {
         return repository.getTibiaCharacterByEmail(email);
     }
 
+    public boolean ifExistTibiaCharacterByHash(String hash)
+    {
+        return repository.existsByHashAuth(hash);
+    }
+
 }
