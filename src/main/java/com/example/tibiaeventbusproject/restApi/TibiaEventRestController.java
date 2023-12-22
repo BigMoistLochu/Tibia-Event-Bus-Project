@@ -38,6 +38,11 @@ public class TibiaEventRestController {
        //2.Register/Login Layer, generowanie hashu->Weryfikacja go
 
 
+       //za pomoca jsona wyslemy zasoby, uzytkownika oraz jego eventy
+       //jedna z przydatniejszych rzeczy to podzial uzytkownika a administratora,
+       //bo state
+
+
 
 
 

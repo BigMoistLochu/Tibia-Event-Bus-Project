@@ -17,6 +17,7 @@ public class HashGenerator {
             String bcryptHashString = BCrypt.withDefaults().hashToString(12, email.toCharArray());
             return bcryptHashString;
         }
+
         return null;
     }
 

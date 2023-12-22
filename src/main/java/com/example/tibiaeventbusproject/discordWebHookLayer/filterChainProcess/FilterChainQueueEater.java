@@ -27,7 +27,7 @@ public class FilterChainQueueEater implements Runnable{
             {
 
                 TibiaEventDto tibiaEventDto = FilterChainQueue.addEventToMainQueue();
-                if(tibiaEventDto !=null)
+                if(tibiaEventDto != null)
                 {
 
                     //tutaj bedzie sprawdzac czy taki uzytkownik istnieje ;)

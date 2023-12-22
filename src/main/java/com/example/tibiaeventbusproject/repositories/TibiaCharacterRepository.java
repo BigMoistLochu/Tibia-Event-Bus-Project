@@ -9,5 +9,7 @@ public interface TibiaCharacterRepository extends MongoRepository<TibiaCharacter
 
     TibiaCharacter getTibiaCharacterByEmail(String email);
 
+    TibiaCharacter getTibiaCharacterByHashAuth(String hash);
+
     boolean existsByHashAuth(String hash);
 }
