@@ -2,14 +2,16 @@ package com.example.tibiaeventbusproject;
 
 import com.example.tibiaeventbusproject.discordWebHookLayer.WebHookThread;
 import com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess.FilterChainQueueEater;
+import com.example.tibiaeventbusproject.loginAndRegisterLayer.HashGenerator;
 import com.example.tibiaeventbusproject.services.TibiaEventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+
 
 
 @SpringBootApplication
@@ -34,8 +36,10 @@ public class TibiaEventBusProjectApplication implements CommandLineRunner {
         WebHookThread webHookThread = new WebHookThread();
         webHookThread.run();
         //Thread responsible for processing messages and uploading them to the database
-        FilterChainQueueEater filterChainQueueEater = new FilterChainQueueEater(tibiaEventService);
-        filterChainQueueEater.run();
+//        FilterChainQueueEater filterChainQueueEater = new FilterChainQueueEater(tibiaEventService);
+//        filterChainQueueEater.run();
+
+
 
 
     }

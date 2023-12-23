@@ -1,8 +1,11 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer;
 
+import com.example.tibiaeventbusproject.loginAndRegisterLayer.HashGenerator;
 import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -12,6 +15,7 @@ public class TibiaEventJsonHandler {
     private static final ObjectMapper mapper = new ObjectMapper();
     private static final String regex = "bototc\\.message\\(([^)]+)\\)"; //sprawdza czy wiadomosc ma forme bototc.message()
 
+    private static Logger logger = LoggerFactory.getLogger(TibiaEventJsonHandler.class);
     /**
      * Filtr Received Message and parse json From Discord to TibiaEvent.class
      * @param message
@@ -63,7 +67,7 @@ public class TibiaEventJsonHandler {
         try {
             return mapper.readValue(json, TibiaEventDto.class);
         } catch (JsonProcessingException e) {
-            System.out.println("Bledny String przy deserializacji jsona na obiekt w klasie MessageReceivedFilter");
+            logger.error("Blad z wyciagania wiadomosci i parsowania jej na event",e);
         }
         return null;
     }

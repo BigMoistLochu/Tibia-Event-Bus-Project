@@ -1,30 +1,45 @@
 package com.example.tibiaeventbusproject.loginAndRegisterLayer;
 
-import at.favre.lib.crypto.bcrypt.BCrypt;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 
 public class HashGenerator {
 
 
-    //potrzebujesz HashGenerator oraz HashVeryfikator
+    private static Logger logger = LoggerFactory.getLogger(HashGenerator.class);
 
-    //chcesz uzywac tej funkcji tylko do hashowania wiec nie potrzebujesz kilku instancji
 
-    public static String getBcryptHashString(String email)
+    public static String getHashPasswordUsingMD5(String email)
     {
-        //$2a$12$US00g/uMhoSBm.HiuieBjeMtoN69SN.GE25fCpldebzkryUyopws6 przykladowy hash
-        if(email instanceof String && email!=null)
+        if(email!=null)
         {
-            String bcryptHashString = BCrypt.withDefaults().hashToString(12, email.toCharArray());
-            return bcryptHashString;
-        }
+            try {
+                String hashThePassword = new BigInteger(1, MessageDigest.getInstance("MD5").
+                        digest(email.getBytes())).toString(16);
 
+                return hashThePassword;
+            }
+            catch (NoSuchAlgorithmException e)
+            {
+                logger.error("error with algorithm, MD5 not found", e);
+            }
+        }
         return null;
     }
 
-    public static boolean verifyBcryptHashString(String email,String bcryptHashString)
+    public static boolean verifyHashPassword(String hashedemail,String hash)
     {
-        BCrypt.Result result = BCrypt.verifyer().verify(email.toCharArray(), bcryptHashString);
-        return result.verified;
+        if(hashedemail!=null&&hash!=null)
+        {
+            return hash.equals(hashedemail);
+        }
+        return false;
     }
 
 
