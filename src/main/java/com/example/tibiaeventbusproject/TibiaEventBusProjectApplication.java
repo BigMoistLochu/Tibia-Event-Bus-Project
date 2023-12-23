@@ -39,7 +39,7 @@ public class TibiaEventBusProjectApplication implements CommandLineRunner {
 //        FilterChainQueueEater filterChainQueueEater = new FilterChainQueueEater(tibiaEventService);
 //        filterChainQueueEater.run();
 
-
+        //admin pass
 
 
     }
