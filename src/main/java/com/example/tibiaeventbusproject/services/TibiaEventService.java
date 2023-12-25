@@ -24,7 +24,6 @@ public class TibiaEventService {
     public void getTibiaEvent(TibiaEvent event)
     {
         tibiaEventRepository.insert(event);
-
     }
 
 

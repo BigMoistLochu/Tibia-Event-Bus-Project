@@ -1,9 +1,12 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess;
 
+import com.example.tibiaeventbusproject.loginAndRegisterLayer.HashGenerator;
 import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEvent;
 import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventDto;
 import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventMapper;
 import com.example.tibiaeventbusproject.services.TibiaEventService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class FilterChainQueueEater implements Runnable{
 
@@ -13,6 +16,8 @@ public class FilterChainQueueEater implements Runnable{
      */
 
     private TibiaEventService tibiaEventService;
+
+    private static Logger logger = LoggerFactory.getLogger(FilterChainQueueEater.class);
 
     public FilterChainQueueEater(TibiaEventService tibiaEventService) {
         this.tibiaEventService = tibiaEventService;
@@ -34,6 +39,7 @@ public class FilterChainQueueEater implements Runnable{
 
                     TibiaEvent tibiaEvent = TibiaEventMapper.convertDtoToEntity(tibiaEventDto);
                     tibiaEventService.getTibiaEvent(tibiaEvent);
+                    logger.info("Event Zostal Dodany Do bazy");
                 }
             }
         }

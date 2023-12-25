@@ -1,5 +1,9 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess;
 
+import com.example.tibiaeventbusproject.loginAndRegisterLayer.HashGenerator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,6 +13,7 @@ public class FilterChainMap {
 
 
     private final static Map<String, FiltrMethod> map = createMap();
+    private static Logger logger = LoggerFactory.getLogger(FilterChainMap.class);
 
 
     /**
@@ -19,17 +24,17 @@ public class FilterChainMap {
         Map<String, FiltrMethod> newInstanceMap = new HashMap<>();
 
         newInstanceMap.put("Frag",(tibiaEvent)->{
-            System.out.println("Zwracam metode z lambdy i dodaje do kolejki event");
+            logger.info("Dodaje event: "+tibiaEvent.getState());
             FilterChainQueue.getInstance().addEventToFirstQueue(tibiaEvent);
         });
 
         newInstanceMap.put("Dead",(tibiaEvent)->{
-            System.out.println("dodaje do bazy dead event do tibia service");
+            logger.info("Dodaje event: "+tibiaEvent.getState());
             FilterChainQueue.getInstance().addEventToFirstQueue(tibiaEvent);
         });
 
         newInstanceMap.put("Balance",(tibiaEvent)->{
-            System.out.println("dodaje do bazy balance event do tibia service");
+            logger.info("Dodaje event: "+tibiaEvent.getState());
             FilterChainQueue.getInstance().addEventToFirstQueue(tibiaEvent);
         });
 
