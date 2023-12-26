@@ -1,6 +1,5 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer;
 
-import com.example.tibiaeventbusproject.loginAndRegisterLayer.HashGenerator;
 import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,6 +15,11 @@ public class TibiaEventJsonHandler {
     private static final String regex = "bototc\\.message\\(([^)]+)\\)"; //sprawdza czy wiadomosc ma forme bototc.message()
 
     private static Logger logger = LoggerFactory.getLogger(TibiaEventJsonHandler.class);
+
+
+
+
+
     /**
      * Filtr Received Message and parse json From Discord to TibiaEvent.class
      * @param message
@@ -32,6 +36,7 @@ public class TibiaEventJsonHandler {
                 TibiaEventDto tibiaEventDto = getEventFromJson(json);
                 if(tibiaEventDto !=null)
                 {
+                    logger.info("Pomyslnie zwrocono");
                     return tibiaEventDto;
                 }
             }
@@ -68,6 +73,7 @@ public class TibiaEventJsonHandler {
             return mapper.readValue(json, TibiaEventDto.class);
         } catch (JsonProcessingException e) {
             logger.error("Blad z wyciagania wiadomosci i parsowania jej na event",e);
+
         }
         return null;
     }
