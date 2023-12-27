@@ -1,15 +1,14 @@
 package com.example.tibiaeventbusproject;
 
-import com.example.tibiaeventbusproject.discordWebHookLayer.TibiaEventJsonHandler;
+
 import com.example.tibiaeventbusproject.discordWebHookLayer.WebHookThread;
-import com.example.tibiaeventbusproject.loggingInformationLayer.LoggerHandler;
 import com.example.tibiaeventbusproject.services.TibiaEventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.logging.*;
+
 
 
 
@@ -41,19 +40,6 @@ public class TibiaEventBusProjectApplication implements CommandLineRunner {
         //admin pass
 
 
-
-
-        //Logger logger = LoggerFactory.getLogger(TibiaEventJsonHandler.class);
-//        Logger logger = Logger.getLogger(TibiaEventBusProjectApplication.class.getName());
-//
-//        LoggerHandler loggerHandler = new LoggerHandler();
-//        logger.addHandler(loggerHandler);
-//
-//        //klasa ktora lapie jest oddziena do przetwarzania
-//        //potrzebujemy klasy ktora przetrzyma:
-//
-//
-//        logger.log(Level.SEVERE,"wowoluje z poziomu tej klasy ");
 
 
 

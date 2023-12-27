@@ -4,7 +4,6 @@ import com.example.tibiaeventbusproject.loggingInformationLayer.LoggerUtil;
 import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.slf4j.LoggerFactory;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,7 +15,7 @@ public class TibiaEventJsonHandler {
     private static final ObjectMapper mapper = new ObjectMapper();
     private static final String regex = "bototc\\.message\\(([^)]+)\\)"; //sprawdza czy wiadomosc ma forme bototc.message()
 
-    private static Logger logger = LoggerUtil.getLogger(TibiaEventJsonHandler.class);
+    private final static Logger logger = LoggerUtil.getLogger(TibiaEventJsonHandler.class);
 
 
 

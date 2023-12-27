@@ -5,6 +5,8 @@ import java.util.logging.LogRecord;
 
 public class LoggerHandler extends Handler {
 
+
+
     @Override
     public void publish(LogRecord record) {
 
