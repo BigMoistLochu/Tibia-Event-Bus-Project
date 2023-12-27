@@ -4,9 +4,10 @@ import com.example.tibiaeventbusproject.loggingInformationLayer.LoggerUtil;
 import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -15,7 +16,7 @@ public class TibiaEventJsonHandler {
     private static final ObjectMapper mapper = new ObjectMapper();
     private static final String regex = "bototc\\.message\\(([^)]+)\\)"; //sprawdza czy wiadomosc ma forme bototc.message()
 
-    private static Logger logger = LoggerFactory.getLogger(TibiaEventJsonHandler.class);
+    private static Logger logger = LoggerUtil.getLogger(TibiaEventJsonHandler.class);
 
 
 
@@ -37,7 +38,7 @@ public class TibiaEventJsonHandler {
                 TibiaEventDto tibiaEventDto = getEventFromJson(json);
                 if(tibiaEventDto !=null)
                 {
-                    LoggerUtil.logError("Wywoluje sie z JsonHandlera");
+                    logger.log(Level.SEVERE,"siema jestem z jsonHanndler");
                     return tibiaEventDto;
                 }
             }
@@ -73,7 +74,7 @@ public class TibiaEventJsonHandler {
         try {
             return mapper.readValue(json, TibiaEventDto.class);
         } catch (JsonProcessingException e) {
-            logger.error("Blad z wyciagania wiadomosci i parsowania jej na event",e);
+
         }
         return null;
     }

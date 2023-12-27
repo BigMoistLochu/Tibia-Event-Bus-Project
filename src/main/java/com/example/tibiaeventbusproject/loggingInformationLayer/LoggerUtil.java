@@ -2,23 +2,37 @@ package com.example.tibiaeventbusproject.loggingInformationLayer;
 
 import com.example.tibiaeventbusproject.TibiaEventBusProjectApplication;
 
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class LoggerUtil {
 
-    private static Logger logger = Logger.getLogger(TibiaEventBusProjectApplication.class.getName());
-    private static LoggerHandler handler;
+    private final static LoggerHandler handler = new LoggerHandler();
 
-    static {
-        handler = new LoggerHandler();
-        logger.addHandler(handler);
-    }
+    private static final HashMap<String,Logger> mapLoggers = new HashMap<>();
 
-    public static void logError(String msg)
+
+    public static Logger getLogger(Class<?> clazz)
     {
-        logger.log(Level.SEVERE,msg);
-        //wywoluje ta metode przez co handler przechwytuje to
+        if (clazz != null) {
+            return getLoggerFromLoggerUtil(clazz.getName());
+        } else {
+            throw new IllegalArgumentException("Klasa loggera nie może być nullem");
+        }
     }
+
+    private static Logger getLoggerFromLoggerUtil(String nameClazz)
+    {
+        if (!mapLoggers.containsKey(nameClazz)) {
+            Logger logger = Logger.getLogger(nameClazz);
+            logger.addHandler(handler);
+            mapLoggers.put(nameClazz, logger);
+        }
+
+        return mapLoggers.get(nameClazz);
+    }
+
+
 
 }

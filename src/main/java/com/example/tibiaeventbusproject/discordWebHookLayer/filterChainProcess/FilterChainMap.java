@@ -1,11 +1,12 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess;
 
-import com.example.tibiaeventbusproject.loginAndRegisterLayer.HashGenerator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import com.example.tibiaeventbusproject.loggingInformationLayer.LoggerUtil;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class FilterChainMap {
@@ -13,7 +14,7 @@ public class FilterChainMap {
 
 
     private final static Map<String, FiltrMethod> map = createMap();
-    private static Logger logger = LoggerFactory.getLogger(FilterChainMap.class);
+    private static Logger logger = LoggerUtil.getLogger(FilterChainMap.class);
 
 
     /**
@@ -24,7 +25,7 @@ public class FilterChainMap {
         Map<String, FiltrMethod> newInstanceMap = new HashMap<>();
 
         newInstanceMap.put("Frag",(tibiaEvent)->{
-            logger.info("Dodaje event: "+tibiaEvent.getState());
+            logger.log(Level.SEVERE,"jestem z klasy ChainMap");
             FilterChainQueue.getInstance().addEventToFirstQueue(tibiaEvent);
         });
 
