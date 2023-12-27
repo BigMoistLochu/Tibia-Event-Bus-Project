@@ -44,14 +44,16 @@ public class TibiaEventBusProjectApplication implements CommandLineRunner {
 
 
         //Logger logger = LoggerFactory.getLogger(TibiaEventJsonHandler.class);
-        Logger logger = Logger.getLogger(TibiaEventBusProjectApplication.class.getName());
-        LoggerHandler loggerHandler = new LoggerHandler();
-        logger.addHandler(loggerHandler);
-
-
-
-
-        logger.log(Level.SEVERE,"wowoluje z poziomu tej klasy ");
+//        Logger logger = Logger.getLogger(TibiaEventBusProjectApplication.class.getName());
+//
+//        LoggerHandler loggerHandler = new LoggerHandler();
+//        logger.addHandler(loggerHandler);
+//
+//        //klasa ktora lapie jest oddziena do przetwarzania
+//        //potrzebujemy klasy ktora przetrzyma:
+//
+//
+//        logger.log(Level.SEVERE,"wowoluje z poziomu tej klasy ");
 
 
 

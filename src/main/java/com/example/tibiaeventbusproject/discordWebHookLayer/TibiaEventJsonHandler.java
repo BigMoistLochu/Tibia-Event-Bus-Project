@@ -1,5 +1,6 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer;
 
+import com.example.tibiaeventbusproject.loggingInformationLayer.LoggerUtil;
 import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -36,7 +37,7 @@ public class TibiaEventJsonHandler {
                 TibiaEventDto tibiaEventDto = getEventFromJson(json);
                 if(tibiaEventDto !=null)
                 {
-                    logger.info("Pomyslnie zwrocono");
+                    LoggerUtil.logError("Wywoluje sie z JsonHandlera");
                     return tibiaEventDto;
                 }
             }
@@ -73,7 +74,6 @@ public class TibiaEventJsonHandler {
             return mapper.readValue(json, TibiaEventDto.class);
         } catch (JsonProcessingException e) {
             logger.error("Blad z wyciagania wiadomosci i parsowania jej na event",e);
-
         }
         return null;
     }
