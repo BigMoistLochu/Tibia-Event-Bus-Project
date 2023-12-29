@@ -1,18 +1,10 @@
-```java
-    private final FilterChain filterChain = new WebHookFilterChain();
+# Opis Wątków w Klasie TibiaEventBusProjectApplication
 
-    @Override
-    public void onMessageReceived(MessageReceivedEvent event) {
+W klasie TibiaEventBusProjectApplication tworzą się dwa wątki:
 
-        if (event != null) {
-            String message = event.getMessage().getContentRaw();
+## WebHookThreadessinger
+#### (trzymany tam jest token wiec nie ma go na githubie)
+Odpowiedzialny za przyjmowanie wiadomości z Discorda.
 
-            TibiaEventDto parsedEvent = TibiaEventJsonHandler.getParsedTibiaEvent(message);
-
-            if (parsedEvent != null) {
-                filterChain.setEvent(parsedEvent).doFilter();
-            }
-        }
-    }
-}
-
+## [FilterChainQueueEater](src/main/java/com/example/tibiaeventbusproject/discordWebHookLayer/filterChainProcess/FilterChainQueueEater.java)
+Odpowiedzialny za przetwarzanie wiadomości z kolejki w klasie FilterChain.
