@@ -20,7 +20,9 @@ public class WebHookMessageReceived extends ListenerAdapter {
         if(event!=null)
         {
             String message = event.getMessage().getContentRaw();
+
             TibiaEventDto parsedEvent = TibiaEventJsonHandler.getParsedTibiaEvent(message);
+
             if(parsedEvent!=null)
             {
                 filterChain.setEvent(parsedEvent).doFilter();
