@@ -2,17 +2,19 @@ package com.example.tibiaeventbusproject.loginAndRegisterLayer;
 
 
 
-import org.slf4j.Logger;
+import com.example.tibiaeventbusproject.loggingInformationLayer.LoggerUtil;
 import org.slf4j.LoggerFactory;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class HashGenerator {
 
 
-    private static Logger logger = LoggerFactory.getLogger(HashGenerator.class);
+    private static Logger logger = LoggerUtil.getLogger(HashGenerator.class);
 
 
     public static String getHashPasswordUsingMD5(String email)
@@ -27,7 +29,7 @@ public class HashGenerator {
             }
             catch (NoSuchAlgorithmException e)
             {
-                logger.error("error with algorithm, MD5 not found", e);
+                logger.log(Level.SEVERE,"Bad Algoryth choosen");
             }
         }
         return null;

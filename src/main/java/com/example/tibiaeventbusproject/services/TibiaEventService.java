@@ -1,13 +1,12 @@
 package com.example.tibiaeventbusproject.services;
 
 import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEvent;
-import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventDto;
 import com.example.tibiaeventbusproject.repositories.TibiaEventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TibiaEventService {
@@ -29,5 +28,9 @@ public class TibiaEventService {
 
     public List<TibiaEvent> getTibiaEventList() {
         return tibiaEventRepository.findAll();
+    }
+
+    public Optional<TibiaEvent> getTibiaEventById(String id) {
+        return tibiaEventRepository.findById(id);
     }
 }
