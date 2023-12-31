@@ -11,26 +11,25 @@ import java.util.Optional;
 @Service
 public class TibiaEventService {
 
-    private TibiaEventRepository tibiaEventRepository;
+    private TibiaEventRepository repository;
 
     @Autowired
     public TibiaEventService(TibiaEventRepository tibiaEventRepository) {
-        this.tibiaEventRepository = tibiaEventRepository;
+        this.repository = tibiaEventRepository;
     }
 
 
 
-    public void getTibiaEvent(TibiaEvent event)
-    {
-        tibiaEventRepository.insert(event);
+    public void getTibiaEvent(TibiaEvent event) {
+        repository.insert(event);
     }
 
 
     public List<TibiaEvent> getTibiaEventList() {
-        return tibiaEventRepository.findAll();
+        return repository.findAll();
     }
 
     public Optional<TibiaEvent> getTibiaEventById(String id) {
-        return tibiaEventRepository.findById(id);
+        return repository.findById(id);
     }
 }
