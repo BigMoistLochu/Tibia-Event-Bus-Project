@@ -2,6 +2,8 @@ package com.example.tibiaeventbusproject;
 
 
 import com.example.tibiaeventbusproject.discordWebHookLayer.WebHookThread;
+import com.example.tibiaeventbusproject.models.tibiaCharacterResources.TibiaCharacter;
+import com.example.tibiaeventbusproject.services.TibiaCharacterService;
 import com.example.tibiaeventbusproject.services.TibiaEventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -17,9 +19,12 @@ public class TibiaEventBusProjectApplication implements CommandLineRunner {
 
     private TibiaEventService tibiaEventService;
 
+    private TibiaCharacterService tibiaCharacterService;
+
     @Autowired
-    public TibiaEventBusProjectApplication(TibiaEventService tibiaEventService) {
+    public TibiaEventBusProjectApplication(TibiaEventService tibiaEventService, TibiaCharacterService tibiaCharacterService) {
         this.tibiaEventService = tibiaEventService;
+        this.tibiaCharacterService = tibiaCharacterService;
     }
 
     public static void main(String[] args) {
@@ -38,6 +43,11 @@ public class TibiaEventBusProjectApplication implements CommandLineRunner {
 //        filterChainQueueEater.run();
 
         //admin pass
+
+        TibiaCharacter character = new TibiaCharacter("ape123","mati123");
+        tibiaCharacterService.addTibiaCharacter(character);
+
+
 
 
 

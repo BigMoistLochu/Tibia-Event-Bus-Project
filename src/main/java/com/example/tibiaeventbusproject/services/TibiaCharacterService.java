@@ -23,6 +23,11 @@ public class TibiaCharacterService {
         return repository.findAll();
     }
 
+    public void addTibiaCharacter(TibiaCharacter character)
+    {
+        repository.insert(character);
+    }
+
     public TibiaCharacter getTibiaCharacterByHash(String email)
     {
         return repository.getTibiaCharacterByEmail(email);
