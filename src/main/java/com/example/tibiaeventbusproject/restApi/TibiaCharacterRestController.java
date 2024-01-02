@@ -3,10 +3,7 @@ package com.example.tibiaeventbusproject.restApi;
 import com.example.tibiaeventbusproject.models.tibiaCharacterResources.TibiaCharacter;
 import com.example.tibiaeventbusproject.services.TibiaCharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,8 +25,25 @@ public class TibiaCharacterRestController {
     }
 
     @GetMapping("/characters")
-    public List<TibiaCharacter> getAllCharacters()
+    public List<TibiaCharacter> getCharacters()
     {
         return tibiaCharacterService.getAllTibiaCharacters();
     }
+
+    ///api/tibia/characters/{characterId}
+    @PutMapping("/characters/{characterId}")
+    public void updateCharacter(@PathVariable String characterId, @RequestBody TibiaCharacter tibiaCharacter)
+    {
+        //dostajesz obiekt, wyciagasz obiekt z bazy poprzedni, nadpisujesz elementy i wysylasz
+        System.out.println("uptade");
+        System.out.println(tibiaCharacter.getEmail());
+
+    }
+    //DELETE /api/tibia/characters/{characterId}:
+    @DeleteMapping("/characters/{characterId}")
+    public void deleteCharacter(@PathVariable String characterId)
+    {
+        System.out.println("delete");
+    }
+
 }
