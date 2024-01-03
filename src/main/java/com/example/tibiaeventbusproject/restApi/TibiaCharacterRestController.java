@@ -37,7 +37,6 @@ public class TibiaCharacterRestController {
         //dostajesz obiekt, wyciagasz obiekt z bazy poprzedni, nadpisujesz elementy i wysylasz
         System.out.println("uptade");
         System.out.println(tibiaCharacter.getEmail());
-
     }
     //DELETE /api/tibia/characters/{characterId}:
     @DeleteMapping("/characters/{characterId}")
