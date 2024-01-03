@@ -28,6 +28,16 @@ public class TibiaCharacterService {
         repository.insert(character);
     }
 
+    public void deleteTibiaCharacter()
+    {
+
+    }
+
+    public void updateTibiaCharacter()
+    {
+
+    }
+
 
 
     public TibiaCharacter getTibiaCharacterByHash(String email)
