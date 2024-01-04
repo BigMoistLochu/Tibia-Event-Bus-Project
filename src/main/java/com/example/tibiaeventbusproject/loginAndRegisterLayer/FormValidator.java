@@ -1,6 +1,7 @@
 package com.example.tibiaeventbusproject.loginAndRegisterLayer;
 
 import com.example.tibiaeventbusproject.discordWebHookLayer.TibiaEventJsonHandler;
+import com.example.tibiaeventbusproject.loggingInformationLayer.LoggerWriteToFile;
 import com.example.tibiaeventbusproject.models.formsLoginAndRegister.IForm;
 
 public class FormValidator <T extends IForm>{

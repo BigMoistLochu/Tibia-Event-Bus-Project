@@ -1,9 +1,8 @@
 package com.example.tibiaeventbusproject.loggingInformationLayer;
 
-import com.example.tibiaeventbusproject.TibiaEventBusProjectApplication;
+
 
 import java.util.HashMap;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class LoggerUtil {

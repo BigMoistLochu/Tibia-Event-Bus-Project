@@ -23,8 +23,10 @@ public class LoggerHandler extends Handler {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String sformatowanyCzas = czas.format(formatter);
         System.out.println("Czas w Polsce: " + sformatowanyCzas);
-
         //zapisywanie do pliku
+        //wiadomosc chcesz zeby wygladala nastepujaco, Data,klasa/wiadomosc
+        String logAll = sformatowanyCzas+" "+logName+" "+logEntry;
+        LoggerWriteToFile.appendLogsInformationToFile(logAll);
     }
 
     @Override
