@@ -24,7 +24,7 @@ public class LoggerHandler extends Handler {
         String sformatowanyCzas = czas.format(formatter);
         System.out.println("Czas w Polsce: " + sformatowanyCzas);
 
-
+        //zapisywanie do pliku
     }
 
     @Override
