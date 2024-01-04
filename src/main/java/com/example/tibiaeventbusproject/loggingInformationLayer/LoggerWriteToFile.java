@@ -24,7 +24,7 @@ public class LoggerWriteToFile {
             bufferedWriter.close();
             fileWriter.close();
 
-            System.out.println("Tekst został dopisany do pliku.");
+            System.out.println("Log zostal zapisany do pliku.");
 
         } catch (IOException e) {
             System.out.println("Wystąpił błąd podczas dopisywania do pliku: " + e.getMessage());

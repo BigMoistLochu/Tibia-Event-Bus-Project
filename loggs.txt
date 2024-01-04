@@ -1,4 +1,5 @@
-siema jestem z jsonHanndler
-jestem z klasy ChainMap
-2024-01-04 23:49:10 com.example.tibiaeventbusproject.discordWebHookLayer.TibiaEventJsonHandler siema jestem z jsonHanndler
-2024-01-04 23:49:10 com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess.FilterChainMap jestem z klasy ChainMap
+dataTime,logClass,logMessage
+2024-01-05 00:14:42,com.example.tibiaeventbusproject.discordWebHookLayer.TibiaEventJsonHandler,siema jestem z jsonHanndler
+2024-01-05 00:14:42,com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess.FilterChainMap,jestem z klasy ChainMap
+2024-01-05 00:15:02,com.example.tibiaeventbusproject.discordWebHookLayer.TibiaEventJsonHandler,siema jestem z jsonHanndler
+2024-01-05 00:15:02,com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess.FilterChainMap,jestem z klasy ChainMap
