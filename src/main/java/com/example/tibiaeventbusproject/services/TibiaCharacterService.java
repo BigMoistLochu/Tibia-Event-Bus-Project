@@ -28,15 +28,17 @@ public class TibiaCharacterService {
         repository.insert(character);
     }
 
-    public void deleteTibiaCharacter()
+    public void deleteTibiaCharacter(TibiaCharacter character)
     {
-
+        repository.delete(character);
     }
 
     public void updateTibiaCharacter()
     {
 
     }
+
+
 
 
 
