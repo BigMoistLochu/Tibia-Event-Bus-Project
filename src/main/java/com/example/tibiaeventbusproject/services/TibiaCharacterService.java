@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TibiaCharacterService {
@@ -33,9 +34,11 @@ public class TibiaCharacterService {
         repository.delete(character);
     }
 
-    public void updateTibiaCharacter()
+    public void updateTibiaCharacter(String id)
     {
-
+        TibiaCharacter tibiaCharacter = repository.findById(id).get();
+        TibiaCharacter newTibiaCharacter = new TibiaCharacter(tibiaCharacter.getEmail(),tibiaCharacter.getPassword());
+        repository.insert(newTibiaCharacter);
     }
 
 
