@@ -17,6 +17,11 @@ public class TibiaCharacterRestController {
     //11	PUT /api/tibia/characters/{characterId}: Aktualizacja profilu postaci.	0,4	1,00%
     //12	DELETE /api/tibia/characters/{characterId}: Usunięcie postaci z konta użytkownika.	0,8	2,00%
 
+    //POST /api/tibia/characters: Dodanie nowej postaci.
+    //GET /api/tibia/characters: Pobieranie listy postaci użytkownika.
+    //PUT /api/tibia/characters/{characterId}: Aktualizacja profilu postaci.
+    //DELETE /api/tibia/characters/{characterId}: Usunięcie postaci z konta użytkownika.
+
     private TibiaCharacterService tibiaCharacterService;
 
     @Autowired
@@ -44,5 +49,7 @@ public class TibiaCharacterRestController {
     {
         System.out.println("delete");
     }
+
+
 
 }
