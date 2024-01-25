@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class TibiaGuide {
 
     @Id
-    private Long id;
+    private String id;
     private String name;
 
     private String description;

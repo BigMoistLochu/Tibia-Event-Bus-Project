@@ -3,6 +3,7 @@ package com.example.tibiaeventbusproject;
 
 import com.example.tibiaeventbusproject.discordWebHookLayer.WebHookThread;
 import com.example.tibiaeventbusproject.models.tibiaCharacterResources.TibiaCharacter;
+import com.example.tibiaeventbusproject.models.tibiaGuide.TibiaGuide;
 import com.example.tibiaeventbusproject.services.TibiaCharacterService;
 import com.example.tibiaeventbusproject.services.TibiaEventService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,11 +45,11 @@ public class TibiaEventBusProjectApplication implements CommandLineRunner {
 
         //admin pass
 
-        TibiaCharacter character = new TibiaCharacter("ape123","mati123");
-        tibiaCharacterService.addTibiaCharacter(character);
+//        TibiaCharacter character = new TibiaCharacter("ape123","mati123");
+//        tibiaCharacterService.addTibiaCharacter(character);
 
 
-
+        TibiaGuide tibiaGuide = new TibiaGuide("xd","desc123");
 
 
 

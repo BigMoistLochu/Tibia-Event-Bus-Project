@@ -9,7 +9,6 @@ import lombok.Setter;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
 public class Threads {
 
 
@@ -20,5 +19,16 @@ public class Threads {
     private List<Post> postList;
 
 
+    public Threads() {}
 
+    public Threads(int id, String name, List<Post> postList) {
+        this.id = id;
+        this.name = name;
+        this.postList = postList;
+    }
+
+    public Threads(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

@@ -12,4 +12,5 @@ public interface TibiaCharacterRepository extends MongoRepository<TibiaCharacter
     TibiaCharacter getTibiaCharacterByHashAuth(String hash);
 
     boolean existsByHashAuth(String hash);
+
 }

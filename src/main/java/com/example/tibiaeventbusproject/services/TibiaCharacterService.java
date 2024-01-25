@@ -29,16 +29,17 @@ public class TibiaCharacterService {
         repository.insert(character);
     }
 
-    public void deleteTibiaCharacter(TibiaCharacter character)
-    {
-        repository.delete(character);
-    }
-
-    public void updateTibiaCharacter(String id)
+    public void deleteTibiaCharacter(String id)
     {
         TibiaCharacter tibiaCharacter = repository.findById(id).get();
-        TibiaCharacter newTibiaCharacter = new TibiaCharacter(tibiaCharacter.getEmail(),tibiaCharacter.getPassword());
-        repository.insert(newTibiaCharacter);
+        repository.delete(tibiaCharacter);
+    }
+
+    public void updateTibiaCharacter(String id,String password)
+    {
+        TibiaCharacter tibiaCharacter = repository.findById(id).get();
+        tibiaCharacter.setPassword(password);
+        repository.save(tibiaCharacter);
     }
 
 
