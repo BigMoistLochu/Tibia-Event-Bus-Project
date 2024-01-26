@@ -32,6 +32,7 @@ public class FilterChainQueueEater implements Runnable{
             {
 
                 TibiaEventDto tibiaEventDto = FilterChainQueue.addEventToMainQueue();
+
                 if(tibiaEventDto != null)
                 {
 

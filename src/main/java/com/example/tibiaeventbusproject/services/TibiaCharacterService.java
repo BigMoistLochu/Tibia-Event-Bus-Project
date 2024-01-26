@@ -19,40 +19,30 @@ public class TibiaCharacterService {
         this.repository = repository;
     }
 
-    public List<TibiaCharacter> getAllTibiaCharacters()
-    {
+    public List<TibiaCharacter> getAllTibiaCharacters() {
         return repository.findAll();
     }
 
-    public void addTibiaCharacter(TibiaCharacter character)
-    {
+    public void addTibiaCharacter(TibiaCharacter character) {
         repository.insert(character);
     }
 
-    public void deleteTibiaCharacter(String id)
-    {
+    public void deleteTibiaCharacter(String id) {
         TibiaCharacter tibiaCharacter = repository.findById(id).get();
         repository.delete(tibiaCharacter);
     }
 
-    public void updateTibiaCharacter(String id,String password)
-    {
+    public void updateTibiaCharacter(String id,String password) {
         TibiaCharacter tibiaCharacter = repository.findById(id).get();
         tibiaCharacter.setPassword(password);
         repository.save(tibiaCharacter);
     }
 
-
-
-
-
-    public TibiaCharacter getTibiaCharacterByHash(String email)
-    {
+    public TibiaCharacter getTibiaCharacterByHash(String email) {
         return repository.getTibiaCharacterByEmail(email);
     }
 
-    public boolean ifExistTibiaCharacterByHash(String hash)
-    {
+    public boolean ifExistTibiaCharacterByHash(String hash) {
         return repository.existsByHashAuth(hash);
     }
 

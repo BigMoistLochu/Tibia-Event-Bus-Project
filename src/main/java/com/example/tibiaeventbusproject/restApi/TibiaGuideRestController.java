@@ -21,33 +21,27 @@ public class TibiaGuideRestController {
 
     //GET /api/guides: Pobieranie listy poradników.
     @GetMapping("/")
-    public List<TibiaGuide> getAllGuides()
-    {
+    public List<TibiaGuide> getAllGuides() {
         return tibiaGuideService.getAllTibiaGuides();
     }
 
     //POST /api/guides: Dodawanie nowego poradnika.
     @PostMapping("/")
-    public void createTibiaGuide(@RequestBody TibiaGuide tibiaGuide)
-    {
+    public void createTibiaGuide(@RequestBody TibiaGuide tibiaGuide) {
         tibiaGuideService.createTibiaGuide(tibiaGuide);
     }
 
     //PUT /api/guides/{guideId}: Aktualizacja poradnika.
     @PutMapping("/{guideId}")
-    public void changeTibiaGuide(@PathVariable String guideId,@RequestBody TibiaGuide tibiaGuide)
-    {
+    public void changeTibiaGuide(@PathVariable String guideId,@RequestBody TibiaGuide tibiaGuide) {
         tibiaGuideService.updateTibiaGuide(guideId,tibiaGuide);
     }
 
-    //Delete TibiaGuide
+    //DELETE /api/guides/{guideId}: Usunięcie poradnika.
     @DeleteMapping("/{guideId}")
-    public void changeTibiaGuide(@PathVariable String guideId)
-    {
+    public void changeTibiaGuide(@PathVariable String guideId) {
         tibiaGuideService.deleteTibiaGuide(guideId);
     }
 
 
-
-    //DELETE /api/guides/{guideId}: Usunięcie poradnika.
 }

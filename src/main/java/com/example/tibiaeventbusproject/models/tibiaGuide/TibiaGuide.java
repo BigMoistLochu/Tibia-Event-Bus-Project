@@ -13,8 +13,7 @@ public class TibiaGuide {
     private String description;
 
 
-    public TibiaGuide() {
-    }
+    public TibiaGuide() {}
 
     public TibiaGuide(String name, String description) {
         this.name = name;

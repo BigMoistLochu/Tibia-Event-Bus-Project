@@ -19,7 +19,6 @@ public class TibiaEventRestController {
               this.tibiaEventService = tibiaEventService;
        }
 
-
        @GetMapping("/events")
        public List<TibiaEvent> getAllEvents()
        {
@@ -31,6 +30,15 @@ public class TibiaEventRestController {
        {
               return tibiaEventService.getTibiaEventById(id).orElseThrow();
        }
+
+
+
+
+
+
+
+
+
 
        @PutMapping("/event/{id}")
        public void updateEvent(@PathVariable String id,@RequestBody TibiaEvent tibiaEvent)
