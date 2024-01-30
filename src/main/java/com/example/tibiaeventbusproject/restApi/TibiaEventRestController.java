@@ -40,24 +40,4 @@ public class TibiaEventRestController {
 
 
 
-       @PutMapping("/event/{id}")
-       public void updateEvent(@PathVariable String id,@RequestBody TibiaEvent tibiaEvent)
-       {
-              //updateevent
-
-       }
-
-       @DeleteMapping("/event/{id}")
-       public void deleteEvent(@PathVariable String id)
-       {
-              //delete event
-       }
-
-
-
-
-
-
-
-
 }

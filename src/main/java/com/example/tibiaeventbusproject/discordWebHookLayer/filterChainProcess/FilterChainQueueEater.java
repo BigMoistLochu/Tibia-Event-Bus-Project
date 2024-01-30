@@ -1,6 +1,6 @@
 package com.example.tibiaeventbusproject.discordWebHookLayer.filterChainProcess;
 
-import com.example.tibiaeventbusproject.loginAndRegisterLayer.HashGenerator;
+
 import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEvent;
 import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventDto;
 import com.example.tibiaeventbusproject.models.tibiaEventResources.TibiaEventMapper;
